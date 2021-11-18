@@ -40,7 +40,7 @@ public class EmployeTest {
 	@Test
 	@Order(1)
 	public void testAjoutEmploye() {
-		Employe employe = new Employe("Saidi","ahmed","Ahmed.Saidi@esprit.tn",true,Role.INGENIEUR);
+		Employe employe = new Employe("chadi","znina","chadi.znina@esprit.tn",true,Role.INGENIEUR);
 		int id = employeService.ajouterEmploye(employe);
 		Assert.assertNotNull(employeService.getEmployeById(id));
 	}
@@ -49,7 +49,7 @@ public class EmployeTest {
 	@Order(2)
 	public void testMettreAjourEmailByEmployeId()
 	{
-		Employe employe = new Employe("Slama","ahmed khalil","Ahmedkhalil.slama@esprit.tn",true,Role.INGENIEUR);
+		Employe employe = new Employe("eee","aaaaaaaa","chadi.znina@esprit.tn",true,Role.INGENIEUR);
 		int id = employeService.ajouterEmploye(employe);
 		employeService.mettreAjourEmailByEmployeId("olay@esprit.tn", id);
 		Assert.assertTrue("not equal", employeService.getEmployeById(id).getEmail().equals("olay@esprit.tn"));
@@ -60,9 +60,9 @@ public class EmployeTest {
 	@Order(3)
 	public void testaffecterEmployeADepartement()
 	{
-		Employe employe = new Employe("Mneri","Malek","Malek.Mneri@esprit.tn",true,Role.INGENIEUR);
+		Employe employe = new Employe("bbbbb","bbbbbbbb","chadi.znina@esprit.tn",true,Role.INGENIEUR);
 		int idEmploye = employeService.ajouterEmploye(employe);
-		Departement departement = new Departement("Khalil's Departement");
+		Departement departement = new Departement("chadi's Departement");
 		int idDepartement = entrepriseService.ajouterDepartement(departement);
 		employeService.affecterEmployeADepartement(idEmploye, idDepartement);
 		Assert.assertTrue(employeService.getdeptById(idDepartement).getEmployes().indexOf(employe)!= -1);
@@ -75,7 +75,7 @@ public class EmployeTest {
 	{
 		Employe employe = new Employe("aziz","sahnoun","sahnoun.aziz@esprit.tn",true,Role.INGENIEUR);
 		int idEmploye = employeService.ajouterEmploye(employe);
-		Departement departement = new Departement("Khalil's Departement");
+		Departement departement = new Departement("chadi's Departement");
 		int idDepartement = entrepriseService.ajouterDepartement(departement);
 		employeService.affecterEmployeADepartement(idEmploye, idDepartement);
 		employeService.desaffecterEmployeDuDepartement(idEmploye, idDepartement);
